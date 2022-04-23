@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { ReactNode } from 'react';
 import './App.css';
+import UserCard from './components/userCard';
 
 function App() {
+
+  let cards: Array<ReactNode> = [];
+  for (let i = 0; i < 10; i++) {
+    cards.push(<UserCard key={i}></UserCard>);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="content">
+      {
+        cards.map(card => {
+          return card;
+        })
+      }
     </div>
   );
 }
