@@ -1,5 +1,10 @@
 .user-card {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
     min-height:6.25rem;
+    min-width:8rem;
     padding:1.5rem;
     margin-bottom:0.5rem;
 
@@ -7,4 +12,103 @@
     border:1px solid #ebeef5;
     border-radius:5px;
     box-shadow:1px 1px 1px 1px rgb(0 0 0 / 6%);
+
+    transition: 0.3s;
+
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.user-card:hover {
+    box-shadow: 0 0 10px 10px rgb(0 0 0 / 6%);
+}
+
+.user-profile {
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap:1rem;
+}
+
+.image-container {
+    height:72px;
+    width:72px;
+    min-height:72px;
+    min-width:72px;
+    border-radius:100%;
+    overflow:hidden;
+}
+
+.info-container {
+    display:flex;
+    flex-direction:column;
+}
+
+.info-container div {
+    margin-bottom:0.5rem;
+    font-size:.9375rem;
+}
+
+.info-container div a {
+    text-decoration: none;
+    cursor:pointer;
+}
+
+.info-container .name {
+    font-weight:700;
+    font-size:1.5rem;
+    line-height:26px;
+    margin: 0;
+    color:#303133
+}
+
+.info-container .gender {
+    text-transform:capitalize;
+}
+
+.info-container .email::before {
+    content:"\1F4E7";
+    margin-right:0.5rem;
+}
+
+.info-container .address::before {
+    content:"\1F4CD";
+    margin-right:0.5rem;
+}
+
+.info-container .xkcd::before {
+    content:"\1F3B1";
+    margin-right:0.5rem;
+}
+
+.button-container button.phone {
+    background-color: #0078bf;
+    border: 1px solid #0078bf;
+    border-radius:1.25rem;
+    cursor:pointer;
+    height:42px;
+    text-align:center;
+    width:200px;
+
+    text-decoration:none;
+    font-weight:600;
+    color:#fff;
+}
+
+.button-container .phone::before {
+    content:"\1F4DE";
+    margin-right:0.5rem;
+}
+
+.button-container .phone:hover {
+    background-color: #1f4c7e;
+    border-color: #1f4c7e;
+}
+
+@media screen and (min-width: 800px) {
+    .user-profile {
+        flex-direction: row;
+    }
+    .user-card {
+        flex-direction: row;
+    }
 }
